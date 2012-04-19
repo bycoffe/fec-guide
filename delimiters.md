@@ -1,9 +1,9 @@
 Electronic filing delimiters
 ==========
 
-There are two versions of raw data for every electronic filing submitted to the FEC.
+For electronic filings submitted to the FEC after Jan. 3, 2008, there are two versions of raw data for the filing.
 
-In one version, the fields in the filing are delimited by commas. In the other, the fields are delimited by ASCII 28 characters.
+In one version, the fields in the filing are delimited by commas. In the other, the fields are delimited by ASCII 28 characters. (For filings submitted through Jan. 3, 2008, there is only one version -- the comma-delimited version.)
 
 In most situations, using the version with comma-separated values (CSV) would be preferable; such files are readable by most spreadsheet programs, and most programming languages have built-in support for CSV parsing.
 
