@@ -1,7 +1,7 @@
 Overview
 ==========
 
-The Federal Election Commission offers three general types of downloadable campaign finance data: individual electronic filings in CSV format covering most committees, fixed-width bulk data via FTP from all committees and summary files (both fixed-width and CSV) covering two-year election cycles. Electronic filings are available in real time as they are filed, while the other two types are updated on a regular basis. Let's take them in turn.
+The Federal Election Commission offers three general types of downloadable campaign finance data: individual electronic filings in CSV format covering most committees, pipe-delimited bulk itemized data and summary files via FTP from all committees covering two-year election cycles and specialized CSV or XML files via its [Data Catalog](http://fec.gov/data/DataCatalog.do?format=html). Electronic filings are available in real time as they are filed, while the other two types are updated on a regular basis. Let's take them in turn.
 
 Electronic Filings
 ========
@@ -15,19 +15,11 @@ Even though committees file reports [on a regular schedule](http://www.fec.gov/i
 Bulk FTP Data
 ========
 
-The FEC has offered bulk data for years, and [its offerings](http://www.fec.gov/finance/disclosure/ftp_download.shtml) include summary and detailed files covering committees, candidates and contributions. The bulk files are updated weekly, late on Sunday nights, so depending on your timing and needs the bulk files may not be suitable for every task. The advantage of the bulk files is that they are vetted by the FEC, with some of the records standardized (by adding FEC-issued committee ids, for example) and others removed to prevent duplicate records from appearing. The summary files are in fixed-width format, while the detailed files are pipe-delimited.
+The FEC has offered bulk data for years, and [its offerings](http://www.fec.gov/finance/disclosure/ftp_download.shtml) include summary and detailed files covering committees, candidates and contributions. The bulk files are updated weekly, late on Sunday nights, so depending on your timing and needs the bulk files may not be suitable for every task. The advantage of the bulk files is that they are vetted by the FEC, with some of the records standardized (by adding FEC-issued committee ids, for example) and others removed to prevent duplicate records from appearing. The __summary___ files are in fixed-width format, while the __detailed__ files are either fixed-width or pipe-delimited. The FEC is increasingly moving to pipe-delimited formats.
 
-Summary files
----------
+Bulk data files are contained inside zip files stored on the FTP server, so retrieving them via a web application requires several steps. The FTP data is updated early Monday morning each week, and previous cycles are updated as well, since committees can amend filings from an earlier election cycle.
 
-The [summary files](http://www.fec.gov/finance/disclosure/ftpsum.shtml) include canonical data for candidates and committees - one record for each candidate or committee per two-year election cycle, depending on the file selected. There are two candidate summary files -- one for campaigns that have elections in the current cycle, and one for all candidates no matter if they face election in the cycle or not -- and they can differ in amounts and timeliness. The [current campaigns file](ftp://ftp.fec.gov/FEC/webl12.zip) may be more timely, but also contains a single total for PAC contributions (compared to totals for different kinds of PACs in the other file) and some of its totals may contain double-counted transactions.
+Data Catalog
+========
 
-The [all candidates file](ftp://ftp.fec.gov/FEC/weball12.zip) can be updated slightly less frequently than the current campaigns one, but it contains more detailed breakdowns of certain types of transactions as noted above. The possibility of double-counting some kinds of transactions - transfers to and from authorized committees of a candidate - also exists.
-
-The FEC previously used to generate summary files at the end of the election cycle for candidates and PACs that included totals for different types of PACs, but discontinued these files after the 2005-06 cycle. Files are available from 1979-80 through 2005-06. Party committee summary files exist from the 1991-92 cycle through the 2003-04 cycle. One of the most useful files, which contained a record for each combination of candidate recipient and PAC contributor/independent spender, covers the 1991-92 cycle through the 2001-02 cycle. A similar file exists for candidate-party activities during the same time period.
-
-There's one more thing to look out for - the way that the FEC used to store its data (detailed and summary) relied on the use of [an "overpunch" character](http://www.fec.gov/finance/disclosure/ftpsum.shtml#overpunch) to represent negative amounts. This [recently changed for the detailed contribution files](http://www.fec.gov/blog/disclosure/entry/indiv_oth_and_pas2_file), but it's possible that older summary files still contain such characters, and that the amount fields should be imported as text and then converted to numeric columns, accounting for negative amounts. There is a tutorial for [working with the FTP files using Microsoft Access](http://www.fec.gov/finance/disclosure/working_with_data_files.pdf).
-
-Detailed files
----------
-
+The data catalog is a collection of some of the summary files available via FTP as well as other files covering disbursements, independent expenditures and leadership PACs, among other subjects. The files are available in CSV or XML formats, and cover single cycles (mostly 2010 and 2012, although the summary files also include 2008 data). One advantage of the data catalog files is that they can be called directly from a web application without having to unzip them, but there are some drawbacks. [Independent Expenditures](http://fec.gov/data/IndependentExpenditure.do?format=html&election_yr=2012) include both original transactions and amendments, resulting in duplicate records in those cases. In another example, the [listing of leadership PACs](http://fec.gov/data/Leadership.do?format=html&election_yr=2012) contains an entry for the corporate PAC of Interactive Corp. Most of the data catalog files are updated daily, and they are the one place where it's possible to find [candidate disbursements](http://fec.gov/data/CandidateDisbursement.do?format=html&election_yr=2012) in statewide or district-level files. The files themselves are stored on the FEC's FTP server, so it's possible to grab them directly. The FEC also maintains [a blog about its data](http://fec.gov/blog/) that includes changes and additions to its data offerings.
