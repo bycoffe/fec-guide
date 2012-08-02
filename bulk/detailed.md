@@ -16,7 +16,7 @@ Known as the [candidate master file](http://www.fec.gov/finance/disclosure/metad
 Candidate Committee Linkage
 ---------
 
-A new offering as of July 2012, [this file](http://www.fec.gov/finance/disclosure/metadata/DataDictionaryCandCmteLinkage.shtml) contains one row for each combination of candidate and committee during an election cycle. Candidates can have a primary committee, authorized committees, joint fundraising committees and other relationships. The linkage file helps keep track of all of those relationships. In particular, joint fundraising committees can benefit multiple candidates; previously the committee master file would only list one.
+A new offering as of July 2012, [this file](http://www.fec.gov/finance/disclosure/metadata/DataDictionaryCandCmteLinkage.shtml) contains one row for each combination of candidate and committee during an election cycle. Candidates can have a primary committee, authorized committees, joint fundraising committees and other relationships. The linkage file helps keep track of all of those relationships. In particular, joint fundraising committees can benefit multiple candidates; previously the committee master file would only list one. Note: it does not include a link between candidates and their leadership committees.
 
 Committee Contributions To Candidates
 ---------
