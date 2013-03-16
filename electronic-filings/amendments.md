@@ -9,13 +9,13 @@ Once an amendment is filed, it replaces the original filing and any previous ame
 Is this an amendment?
 ---------
 
-In the section on [header rows](electronic-filings/headers.md), we learned that amendments will have a value in the Report Number field of the first line of the electronic filing. The value of the Report Number represents the number of times the original filing has been amended. The easiest way to determine whether any given filing is an amendment is to check whether the Report Number field is blank. If it is, we can move on, confident that this is an original filing. If the field contains a value, we know that the filing is an amendment.
+In the section on [header rows](headers.md), we learned that amendments will have a value in the Report Number field of the first line of the electronic filing. The value of the Report Number represents the number of times the original filing has been amended. The easiest way to determine whether any given filing is an amendment is to check whether the Report Number field is blank. If it is, we can move on, confident that this is an original filing. If the field contains a value, we know that the filing is an amendment.
 
 
 What's being amended?
 ---------
 
-The section on [header rows](electronic-filings/headers.md), also taught us that the Report ID field will contain a value on amended filings (and will be blank otherwise, just like the Report Number field):
+The section on [header rows](headers.md), also taught us that the Report ID field will contain a value on amended filings (and will be blank otherwise, just like the Report Number field):
 
 > If the filing is an amendment, the report ID will look like this: *FEC-763780*
 
